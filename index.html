@@ -87,6 +87,8 @@
 
         #main {
            padding: 50px 0 30px 0;
+          
+          
         }
         label {
             display: none;
@@ -108,10 +110,10 @@
         }
 
         @media(max-width:500px) {
-            .row {
+            /* .row {
                 margin-left: 15px;
                 margin-right: 15px ;
-            }
+            } */
 
             h1 {
                 font-size: 25px;
@@ -127,7 +129,7 @@
     <div id="main" class="container">
         <h1>Boda Boda Passenger Registration</h1>
         <div class="row">
-            <form class="col-lg-4 col-md-7 col-sm-12 form mx-auto">
+            <form class="col-lg-4 col-md-7 col-sm-12 form mx-auto" name="form">
                 <div class="form-field">
                     <label for="date"></label>
                     <input name="date" id="date" type="text" class="form-control" placeholder="Enter Today's Date"
@@ -158,7 +160,7 @@
                 </div>
                 <div class="form-row">
                     <div class="col-md-6 col-sm-12">
-                        <input name="temp" id="temp" type="number" aria-describedby="basic-addon2" class="form-control"
+                        <input name="temp" id="temp" type="text" aria-describedby="basic-addon2" class="form-control"
                             placeholder="Temperature">
                         <small class="error"></small>
                     </div>
@@ -183,17 +185,16 @@
                     <input name="nameof" id="nameof" type="text" class="form-control" placeholder="Name">
                     <small class="error"></small>
                 </div>
-                <!-- <div class="form-field">
-                                <input name="telephone" type="tel" step="0.01" min="0" aria-label="Telephone number" aria-describedby="basic-addon1"
-                                    class="form-control" placeholder="Telephone number">
-                                <small class="error"></small>
-                            </div> -->
 
                 <div class="form-field">
-                    <input name="nationalid" id="nationalid" type="text" class="form-control" placeholder="National ID">
+                    <input name="nationalid" id="nationalid" type="text" class="form-control" placeholder="National ID/Passprt No.">
                     <small class="error"></small>
                 </div>
-                <button onclick="checkEmpty(inputs)" class="btn btn-success btn-block" id="submit" type="button" value="Submit">Submit</button>
+                <div class="form-field">
+                    <input name="tel" id="tel" type="text" class="form-control" placeholder="Tel No.">
+                    <small class="error"></small>
+                </div>
+                <button onclick="checkEmpty(inputs), validation()" class="btn btn-success btn-block" id="submit" type="button" value="Submit">Submit</button>
 
             </form>
 
