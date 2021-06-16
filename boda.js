@@ -1,15 +1,20 @@
+
+var date = document.getElementById('date');
+var pickUp = document.getElementById('pick-up');
+var dropOff = document.getElementById('dropoff');
+var pickUpTime = document.getElementById('pickup-time')
 var arrivalTime = document.getElementById('arrivalTime');
 var temperature = document.getElementById('temp');
-var inputName = document.getElementById('username');
+var temperature = document.getElementById('temp');
+var inputName = document.getElementById('nameof');
+var dropDowns = document.querySelectorAll('.custom-select')
 
 var error = document.querySelectorAll('.error')
 
 
 const checkEmpty =()=> {
-     if((arrivalTime.value || inputName.value || temperature.value) =='') {
-        error[0].textContent = "Arrival time cant be empty";
-        error[1].textContent = "temp Can't cant be empty";
-        error[2].textContent = "Name Can't cant be empty";
+     if(date.value =='') {
+        error[0].textContent = "Enter Date";
     }
 }
 
