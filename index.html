@@ -163,8 +163,8 @@
                         <small class="error"></small>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                        <select class="custom-select">
-                            <option value="none">Vaccinated?</option>
+                        <select id="vaccinated" class="custom-select">
+                            <option value="">Vaccinated?</option>
                             <option value="1">Yes</option>
                             <option value="2">No</option>
                         </select>
@@ -172,8 +172,8 @@
                     </div>
                 </div>
                 <div class="form-field">
-                    <select class="custom-select">
-                        <option selected>Gender</option>
+                    <select id="gender" class="custom-select">
+                        <option value="">Choose Gender</option>
                         <option value="1">Male</option>
                         <option value="2">Female</option>
                     </select>
@@ -193,7 +193,7 @@
                     <input name="nationalid" id="nationalid" type="text" class="form-control" placeholder="National ID">
                     <small class="error"></small>
                 </div>
-                <button class="btn btn-success btn-block" type="button" value="Submit">Submit</button>
+                <button onclick="checkEmpty(inputs)" class="btn btn-success btn-block" id="submit" type="button" value="Submit">Submit</button>
 
             </form>
 
