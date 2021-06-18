@@ -41,17 +41,17 @@ nameOutput =  document.getElementById('nameof')
     let validation =()=> {
   
     // Function validating  the Temperature field
-    // let validateTemp =()=> {
-    //     let temp = /^[0-9a-zA-Z]+$/
-    //     if (temperature.value.match(temp)){
-    //         temperature.style.border="2px solid lightgrey"
-    //         small[5].innerHTML = ''
-    //     }
-    //     else {
-    //         temperature.style.border = "2px solid red"
-    //         small[5].innerHTML = 'Invalid temperature'
-    //     }
-    // }
+    let validateTemp =()=> {
+        let temp = /^[0-9a-zA-Z]+$/
+        if (temperature.value.match(temp)){
+            temperature.style.border="2px solid lightgrey"
+            small[5].innerHTML = ''
+        }
+        else {
+            temperature.style.border = "2px solid red"
+            small[5].innerHTML = 'Invalid temperature'
+        }
+    }
 
     // Function validating the National ID/Passport field
     let validateID =()=> {
