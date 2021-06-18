@@ -71,25 +71,33 @@
                     </div>
                 </div>
                 <div class="form-field">
-                    <select id="gender" class="custom-select">
-                        <option value="">Choose Gender</option>
-                        <option value="1">Male</option>
-                        <option value="2">Female</option>
-                    </select>
-                    <small class="error"></small>
-                </div>
-                <div class="form-field">
                     <input name="nameof" id="nameof" type="text" class="form-control" placeholder="Name">
                     <small class="error"></small>
                 </div>
+                <div class="form-row">
+                    <div class="col-md-6 col-sm-12">
+                        <select id="gender" class="custom-select">
+                            <option value="">Choose Gender</option>
+                            <option value="1">Male</option>
+                            <option value="2">Female</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+                    <div class="col-md-6 col-sm-12">
+                        <input name="tel" id="tel" type="text" class="form-control" placeholder="Tel No.">
+                        <small class="error"></small>
+                    </div>
+                </div>
+                <div class="form-field">
+                 
+                </div>       
 
                 <div class="form-field">
                     <input name="nationalid" id="nationalid" type="text" class="form-control" placeholder="National ID/Passprt No.">
                     <small class="error"></small>
                 </div>
                 <div class="form-field">
-                    <input name="tel" id="tel" type="text" class="form-control" placeholder="Tel No.">
-                    <small class="error"></small>
+                   
                 </div>
                 <button onclick="checkEmpty(inputs), validation()" class="btn btn-success btn-block" id="submit" type="button" value="Submit">Submit</button>
 

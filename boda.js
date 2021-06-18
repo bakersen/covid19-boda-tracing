@@ -29,47 +29,66 @@ let nameEl = document.form.nameof
 let telNum = document.form.tel
 let nin = document.form.nationalid
 let small = document.querySelectorAll('small')
-let validation =() => {
-    let name = /^[A-Za-z]+$/ 
-    if (nameEl.value <= 8 || (nameEl.value.match(name))) {
-        nameEl.style.border="2px solid lightgrey"
-        small[8].innerHTML = ''
-    }
-else {
-    nameEl.style.border = '2px solid red'
-    small[8].innerHTML = 'Invalid username'
-}
+
+
+// Define Function Validation
+let validation =()=> {
+    
+    // Condition that allows alphabet and atmost 8 characters only
    
-let tel = /^[0-9]+$/
-if (telNum.value <= 10 || (telNum.value.match(tel))) {
-    telNum.style.border="2px solid lightgrey"
-    small[10].innerHTML = ''
-} 
- else {
-    telNum.style.border="2px solid red"
-    small[10].innerHTML = 'Invaid no.'
- }
+    let validateName =() => {
+        let name = /^[A-Za-z]+$/ 
 
- let temp = /^[0-9a-zA-Z]+$/
- if (temperature.value.match(temp)){
-    temperature.style.border="2px solid lightgrey"
-    small[5].innerHTML = ''
- }
- else {
-     temperature.style.border = "2px solid red"
-     small[5].innerHTML = 'Invalid temperature'
- }
+        if (nameEl.value <= 8 || (nameEl.value.match(name))) {
+            nameEl.style.border="2px solid lightgrey"
+            small[7].innerHTML = ''
+        }
+        else {
+            nameEl.style.border = '2px solid red'
+            small[7].innerHTML = 'Name should be 8 Characters atmost '
+        }
+    }
 
-let id = /^[0-9a-zA-Z]+$/
-if(nin.value <=14 || (nin.value.match(id)))  {
-    nin.style.border="2px solid lightgrey"
-    small[9].innerHTML = ''
-} else  {
-    nin.style.border="2px solid red"
-    small[9].innerHTML = 'Invalid ID'
-}
+    let validateTelephone =()=> {
+            
+        let tel = /^[0-9]+$/
+        if (telNum.value <= 10 || (telNum.value.match(tel))) {
+            telNum.style.border="2px solid lightgrey"
+            small[10].innerHTML = ''
+        } 
+        else {
+            telNum.style.border="2px solid red"
+            small[10].innerHTML = 'Invaid no.'
+        }
+    }
 
+    let validateTemp =()=> {
+        let temp = /^[0-9a-zA-Z]+$/
+        if (temperature.value.match(temp)){
+            temperature.style.border="2px solid lightgrey"
+            small[5].innerHTML = ''
+        }
+        else {
+            temperature.style.border = "2px solid red"
+            small[5].innerHTML = 'Invalid temperature'
+        }
+    }
 
+    let validateID =()=> {
+        let id = /^[0-9a-zA-Z]+$/
+        if(nin.value <=14 || (nin.value.match(id)))  {
+            nin.style.border="2px solid lightgrey"
+            small[9].innerHTML = ''
+        } else  {
+            nin.style.border="2px solid red"
+            small[9].innerHTML = 'Invalid ID'
+        }
+    }
+   
+    validateName()
+    validateTelephone()
+    validateTemp()
+    validateID()
  
 }
 
