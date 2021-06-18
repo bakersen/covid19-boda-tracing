@@ -1,4 +1,6 @@
 
+// Declare variables to pick inputs from form
+
 var date = document.getElementById('date');
 var pickUp = document.getElementById('pick-up');
 var dropOff = document.getElementById('dropoff');
@@ -12,7 +14,7 @@ const inputs = [date, pickUp, dropOff, pickUpTime, arrivalTime, temperature, gen
 
 var error = document.querySelectorAll('.error')
 
-
+// Define a function that check for empty fields
 const checkEmpty = (input) => {
      for(let i=0; i<input.length; i++){
          if(input[i].value==""){
@@ -25,6 +27,8 @@ const checkEmpty = (input) => {
      }
 }
 
+// Declare variables to be used in validation
+
 let nameEl = document.form.nameof
 let telNum = document.form.tel
 let nin = document.form.nationalid
@@ -32,23 +36,22 @@ let small = document.querySelectorAll('small')
 
 
 // Define Function Validation
-let validation =()=> {
-    
-    // Condition that allows alphabet and atmost 8 characters only
-   
-    let validateName =() => {
-        let name = /^[A-Za-z]+$/ 
+    let validation =()=> {
+        
+        // Function validating the name field  
+        let validateName =() => {
+            let name = /^[A-Za-z]+$/ 
 
-        if (nameEl.value <= 8 || (nameEl.value.match(name))) {
-            nameEl.style.border="2px solid lightgrey"
-            small[7].innerHTML = ''
+            if (nameEl.value <= 8 || (nameEl.value.match(name))) {
+                nameEl.style.border="2px solid lightgrey"
+                small[7].innerHTML = ''
+            }
+            else {
+                nameEl.style.border = '2px solid red'
+                small[7].innerHTML = 'Name should be 8 Characters atmost '
+            }
         }
-        else {
-            nameEl.style.border = '2px solid red'
-            small[7].innerHTML = 'Name should be 8 Characters atmost '
-        }
-    }
-
+    // Function validating  the telephone field      
     let validateTelephone =()=> {
             
         let tel = /^[0-9]+$/
@@ -62,6 +65,7 @@ let validation =()=> {
         }
     }
 
+    // Function validating  the Temperature field
     let validateTemp =()=> {
         let temp = /^[0-9a-zA-Z]+$/
         if (temperature.value.match(temp)){
@@ -74,6 +78,7 @@ let validation =()=> {
         }
     }
 
+    // Function validating the National ID/Passport field
     let validateID =()=> {
         let id = /^[0-9a-zA-Z]+$/
         if(nin.value <=14 || (nin.value.match(id)))  {
@@ -85,6 +90,7 @@ let validation =()=> {
         }
     }
    
+    // Invoke functions defined above
     validateName()
     validateTelephone()
     validateTemp()
