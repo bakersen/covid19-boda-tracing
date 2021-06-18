@@ -90,21 +90,13 @@ nameOutput =  document.getElementById('nameof')
 
  // Function validating the name field  
 let validateName =() => {
-
         //   
-            let nameMatches = /^[A-Za-z]+$/
-                    
+            let nameMatches = /^[A-Za-z]+$/                    
 
-            if (nameEl.value.length > 8 && (nameEl.value.match(nameMatches)) ) {
-                small[7].innerHTML = 'Name cant contain number & should be 8 Characters atmost';
-            } else if (nameEl.value !="" && !(nameEl.value.match(nameMatches)) )  {
-                small[7].innerHTML = 'Use letters only';
-            } else if (nameEl.value.length <= 8 || (nameEl.value.match(nameMatches)) ) {
-                small[7].innerHTML = ""
+            if (nameEl.value.length > 8) {
+                small[7].innerHTML = 'Name Should be 8 Characters atmost';
+            } else if (nameEl.value.length <= 8) {
+                small[7].innerHTML = '';
             }
         }
-
-
-
-
 
