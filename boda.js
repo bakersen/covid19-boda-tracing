@@ -39,34 +39,19 @@ nameOutput =  document.getElementById('nameof')
 
 // Define Function Validation
     let validation =()=> {
-        
-       
-    // Function validating  the telephone field      
-    let validateTelephone =()=> {
-            
-        let tel = /^[0-9]+$/
-        if (telNum.value <= 10 || (telNum.value.match(tel))) {
-            telNum.style.border="2px solid lightgrey"
-            small[9].innerHTML = ''
-        } 
-        else {
-            telNum.style.border="2px solid red"
-            small[9].innerHTML = 'Invaid no.'
-        }
-    }
-
+  
     // Function validating  the Temperature field
-    let validateTemp =()=> {
-        let temp = /^[0-9a-zA-Z]+$/
-        if (temperature.value.match(temp)){
-            temperature.style.border="2px solid lightgrey"
-            small[5].innerHTML = ''
-        }
-        else {
-            temperature.style.border = "2px solid red"
-            small[5].innerHTML = 'Invalid temperature'
-        }
-    }
+    // let validateTemp =()=> {
+    //     let temp = /^[0-9a-zA-Z]+$/
+    //     if (temperature.value.match(temp)){
+    //         temperature.style.border="2px solid lightgrey"
+    //         small[5].innerHTML = ''
+    //     }
+    //     else {
+    //         temperature.style.border = "2px solid red"
+    //         small[5].innerHTML = 'Invalid temperature'
+    //     }
+    // }
 
     // Function validating the National ID/Passport field
     let validateID =()=> {
@@ -82,7 +67,7 @@ nameOutput =  document.getElementById('nameof')
    
     // Invoke functions defined above
     // validateName()
-    validateTelephone()
+    // validateTelephone()
     validateTemp()
     validateID()
  
@@ -101,5 +86,16 @@ let validateName =() => {        //
             } else if (nameEl.value.length=0) {
                 small[7].innerHTML = '';
             }
-        }
+}
+
+let validateTelephone =() => {    
+            
+            let tel = /^[0-9]+$/                   
+
+            if (telNum.value.length > 12 || !(telNum.value.match(tel))) {
+                small[9].innerHTML = 'Enter a Valid Number';
+            } else if (telNum.value.length <= 10 && (telNum.value.match(tel))) {
+                small[9].innerHTML = '';
+            }            
+}
 
