@@ -47,11 +47,11 @@ nameOutput =  document.getElementById('nameof')
         let tel = /^[0-9]+$/
         if (telNum.value <= 10 || (telNum.value.match(tel))) {
             telNum.style.border="2px solid lightgrey"
-            small[10].innerHTML = ''
+            small[9].innerHTML = ''
         } 
         else {
             telNum.style.border="2px solid red"
-            small[10].innerHTML = 'Invaid no.'
+            small[9].innerHTML = 'Invaid no.'
         }
     }
 
@@ -89,13 +89,16 @@ nameOutput =  document.getElementById('nameof')
 }
 
  // Function validating the name field  
-let validateName =() => {
-        //   
+let validateName =() => {        //   
             let nameMatches = /^[A-Za-z]+$/                    
 
             if (nameEl.value.length > 8) {
                 small[7].innerHTML = 'Name Should be 8 Characters atmost';
-            } else if (nameEl.value.length <= 8) {
+            } else if (nameEl.value.length<= 8 && nameEl.value.match(nameMatches)) {
+                small[7].innerHTML = '';
+            } else if (!(nameEl.value.length<= 8 && nameEl.value.match(nameMatches))) {
+                small[7].innerHTML = 'Enter Valid Name';
+            } else if (nameEl.value.length=0) {
                 small[7].innerHTML = '';
             }
         }
