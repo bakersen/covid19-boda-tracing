@@ -4,7 +4,7 @@
 var date = document.getElementById('date');
 var pickUp = document.getElementById('pick-up');
 var dropOff = document.getElementById('dropoff');
-var pickUpTime = document.getElementById('pickup-time')
+var pickUpTime = document.getElementById('pickup-time');
 var arrivalTime = document.getElementById('arrivalTime');
 var temperature = document.getElementById('temp');
 // var vaccinated = document.getElementById('vaccinated');
@@ -34,23 +34,13 @@ let telNum = document.form.tel
 let nin = document.form.nationalid
 let small = document.querySelectorAll('small')
 
+nameOutput =  document.getElementById('nameof')
+
 
 // Define Function Validation
     let validation =()=> {
         
-        // Function validating the name field  
-        let validateName =() => {
-            let name = /^[A-Za-z]+$/ 
-
-            if (nameEl.value <= 8 || (nameEl.value.match(name))) {
-                nameEl.style.border="2px solid lightgrey"
-                small[7].innerHTML = ''
-            }
-            else {
-                nameEl.style.border = '2px solid red'
-                small[7].innerHTML = 'Name should be 8 Characters atmost '
-            }
-        }
+       
     // Function validating  the telephone field      
     let validateTelephone =()=> {
             
@@ -91,12 +81,28 @@ let small = document.querySelectorAll('small')
     }
    
     // Invoke functions defined above
-    validateName()
+    // validateName()
     validateTelephone()
     validateTemp()
     validateID()
  
 }
+
+ // Function validating the name field  
+let validateName =() => {
+
+        //   
+            let nameMatches = /^[A-Za-z]+$/
+                    
+
+            if (nameEl.value.length > 8 && (nameEl.value.match(nameMatches)) ) {
+                small[7].innerHTML = 'Name cant contain number & should be 8 Characters atmost';
+            } else if (nameEl.value !="" && !(nameEl.value.match(nameMatches)) )  {
+                small[7].innerHTML = 'Use letters only';
+            } else if (nameEl.value.length <= 8 || (nameEl.value.match(nameMatches)) ) {
+                small[7].innerHTML = ""
+            }
+        }
 
 
 
