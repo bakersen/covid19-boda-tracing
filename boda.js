@@ -34,25 +34,10 @@ let telNum = document.form.tel
 let nin = document.form.nationalid
 let small = document.querySelectorAll('small')
 
-nameOutput =  document.getElementById('nameof')
-
-
 // Define Function Validation
     let validation =()=> {
   
-    // Function validating  the Temperature field
-    let validateTemp =()=> {
-        let temp = /^[0-9a-zA-Z]+$/
-        if (temperature.value.match(temp)){
-            temperature.style.border="2px solid lightgrey"
-            small[5].innerHTML = ''
-        }
-        else {
-            temperature.style.border = "2px solid red"
-            small[5].innerHTML = 'Invalid temperature'
-        }
-    }
-
+  
     // Function validating the National ID/Passport field
     let validateID =()=> {
         let id = /^[0-9a-zA-Z]+$/
@@ -66,9 +51,6 @@ nameOutput =  document.getElementById('nameof')
     }
    
     // Invoke functions defined above
-    // validateName()
-    // validateTelephone()
-    validateTemp()
     validateID()
  
 }
@@ -99,3 +81,23 @@ let validateTelephone =() => {
             }            
 }
 
+let validateTemp =() => {              
+            let temp = /^[0-9a-zA-Z]+$/            
+
+            if (temperature.value.length > 2 || !(temperature.value.match(temp))) {
+                small[5].innerHTML = 'invalid Temperature';
+            } else if (temperature.value.length <= 10 && temperature.value.match(temp)) {
+                small[5].innerHTML = '';
+            }            
+}
+
+ let validateID =()=> {
+        
+         let id = /^[0-9a-zA-Z]+$/          
+
+            if (nin.value.length > 14 || !(nin.value.match(id))) {
+                small[10].innerHTML = 'Enter valid ID';
+            } else if (nin.value.length <= 14 && nin.value.match(id)) {
+                small[10].innerHTML = '';
+            }            
+}
