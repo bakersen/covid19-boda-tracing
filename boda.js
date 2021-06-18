@@ -34,26 +34,6 @@ let telNum = document.form.tel
 let nin = document.form.nationalid
 let small = document.querySelectorAll('small')
 
-// Define Function Validation
-    let validation =()=> {
-  
-  
-    // Function validating the National ID/Passport field
-    let validateID =()=> {
-        let id = /^[0-9a-zA-Z]+$/
-        if(nin.value <=14 || (nin.value.match(id)))  {
-            nin.style.border="2px solid lightgrey"
-            small[9].innerHTML = ''
-        } else  {
-            nin.style.border="2px solid red"
-            small[9].innerHTML = 'Invalid ID'
-        }
-    }
-   
-    // Invoke functions defined above
-    validateID()
- 
-}
 
  // Function validating the name field  
 let validateName =() => {        //   
@@ -70,6 +50,7 @@ let validateName =() => {        //
             }
 }
 
+ // Function validating Telephone 
 let validateTelephone =() => {    
             
             let tel = /^[0-9]+$/                   
@@ -81,6 +62,7 @@ let validateTelephone =() => {
             }            
 }
 
+ // Function validating Temperature
 let validateTemp =() => {              
             let temp = /^[0-9a-zA-Z]+$/            
 
@@ -91,6 +73,7 @@ let validateTemp =() => {
             }            
 }
 
+ // Function validating ID
  let validateID =()=> {
         
          let id = /^[0-9a-zA-Z]+$/          
